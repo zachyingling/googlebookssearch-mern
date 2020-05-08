@@ -1,9 +1,13 @@
-import React from 'react';
+import React from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Nav from "./components/Nav/index";
 
-class App extends React.Component {
-  render () {
-    return (<div>Hello</div>);
-  }
+function App () {
+    return (
+    <Router>
+      <Nav/>
+    </Router>
+    );
 }
 
 export default App;
