@@ -1,6 +1,6 @@
 import React from "react";
 
-function Saved() {
+function Saved () {
   return (
     <div>
       <h1>About Page</h1>
@@ -13,6 +13,7 @@ function Saved() {
       </p>
     </div>
   );
+  
 }
 
 export default Saved;
