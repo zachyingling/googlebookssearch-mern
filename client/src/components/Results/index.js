@@ -1,13 +1,17 @@
 import React from "react";
+import ViewButton from "../ViewButton/index";
+import SaveButton from "../SaveButton/index";
 import "./style.css";
 
 function Results(props) {
-  console.log(props);
-  
   return (
   <div className="h-100 container">
     <h1>{props.bookName}</h1>
-    {/* two buttons */}
+    <div className="container" id="buttonContainer">
+      <ViewButton href={props.viewBtn} />
+      <SaveButton id={props.saveBtn}/>
+    </div>
+    <br id="clear" />
     <h2>{props.bookAuthor}</h2>
     <img src={props.image} id="bookImage" alt="bookcover" />
     <p id="bio">{props.bookBio}</p>
