@@ -14,3 +14,7 @@
 #searchBook {
   float: right;
 }
+
+#resultsContainer {
+  background-color: aqua;
+}

@@ -41,7 +41,7 @@ class SearchContainer extends React.Component {
             <input type="submit" id="searchBook" value="Search" onClick={this.handleFormSubmit} />
           </form>
         </div>
-        <div className="container">
+        <div className="container" id="resultsContainer">
           <h2>Results: </h2>
           {this.state.results.length ? this.state.results.map(result => { return <Results
               bookName={result.volumeInfo.title}
