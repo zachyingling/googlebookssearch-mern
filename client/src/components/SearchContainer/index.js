@@ -43,7 +43,7 @@ class SearchContainer extends React.Component {
         </div>
         <div className="container" id="resultsContainer">
           <h2>Results: </h2>
-          {this.state.results.length ? this.state.results.map(result => { return <Results
+          {this.state.results ? this.state.results.map(result => { return <Results
               bookName={result.volumeInfo.title}
               bookAuthor={result.volumeInfo.authors[0]}
               bookBio={result.volumeInfo.description}
@@ -52,7 +52,7 @@ class SearchContainer extends React.Component {
               key={result.id}
               image={result.volumeInfo.imageLinks.thumbnail}
             />})
-           : <h1>Nothing</h1>}
+           : <h1>No results</h1>}
         </div>
       </div>
     );
