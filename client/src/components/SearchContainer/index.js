@@ -48,6 +48,7 @@ class SearchContainer extends React.Component {
               bookAuthor={result.volumeInfo.authors[0]}
               bookBio={result.volumeInfo.description}
               viewBtn={result.volumeInfo.canonicalVolumeLink}
+              saveBtn={result.id}
               key={result.id}
               image={result.volumeInfo.imageLinks.thumbnail}
             />})
