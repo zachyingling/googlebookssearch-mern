@@ -1,11 +1,19 @@
 import React from "react";
 import "./style.css";
+import API from "../../utils/API";
 
 class SearchContainer extends React.Component {
   state = {
-    title: ""
+    title: "",
+    results: {}
   };
   
+  searchBooks = query => {
+    API.apiCall(query)
+      .then(res => console.log("done"))
+      .catch(err => console.log(err));
+  };
+
   handleInputChange = event => {
     let value = event.target.value;
     const name = event.target.name;
@@ -16,6 +24,11 @@ class SearchContainer extends React.Component {
     });
   };
 
+  handleFormSubmit = event => {
+    event.preventDefault();
+    this.searchBooks(this.state.title);
+  };
+
   render () {
     return (
       <div className="container" id="mainContainer">
@@ -23,7 +36,7 @@ class SearchContainer extends React.Component {
         <form className="container">
           <label htmlFor="bookName" className="text">Enter book name: </label>
           <input type="text" id="bookName" name="title" value={this.state.title} onChange={this.handleInputChange}/>
-          <input type="submit" id="searchBook" value="Search" />
+          <input type="submit" id="searchBook" value="Search" onClick={this.handleFormSubmit} />
         </form>
       </div>
     );
