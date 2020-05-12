@@ -1,3 +1,4 @@
 #viewBtn {
-  float: right;
+  float: inline-end;
+  margin-left: 10px;
 }

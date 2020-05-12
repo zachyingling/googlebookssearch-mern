@@ -11,7 +11,6 @@ function Results(props) {
       <ViewButton href={props.viewBtn} />
       <SaveButton id={props.saveBtn}/>
     </div>
-    <br id="clear" />
     <h2>{props.bookAuthor}</h2>
     <img src={props.image} id="bookImage" alt="bookcover" />
     <p id="bio">{props.bookBio}</p>
