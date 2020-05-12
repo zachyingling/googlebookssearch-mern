@@ -1,0 +1,16 @@
+#mainContainer {
+  background-color: rgba(0, 0, 255, 0.63);
+}
+
+.text {
+  color: white;
+}
+
+#bookName {
+  margin-left: 15px;
+  width: 40%;
+}
+
+#searchBook {
+  float: right;
+}
