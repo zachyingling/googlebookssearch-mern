@@ -14,7 +14,7 @@ app.use(express.static("public"));
 app.use(routes);
 
 // Connect to the Mongo DB
-mongoose.connect((process.env.NODE_ENV || "mongodb://localhost/booksdb"), { useNewUrlParser: true });
+mongoose.connect((process.env.NODE_ENV || "mongodb://localhost/booksdb"), { useNewUrlParser: true, useUnifiedTopology: true });
 
 app.listen(PORT, () => {
   console.log("App running on port " + PORT + "!");
