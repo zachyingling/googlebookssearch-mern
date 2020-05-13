@@ -1,13 +1,13 @@
-const path = require("path");
 const router = require("express").Router();
 const db = require("../models");
 
-// Uses react application when built
-router.use((req, res) => {
-  res.sendFile(path.join(__dirname, "../client/build/index.html"));
+router.route("/search").get((req, res) => {
+  console.log("made it to search;");
+  // return axios.get("https://www.googleapis.com/books/v1/volumes?q=intitle:" + title + "&key=" + process.env.REACT_APP_GOOGLE_KEY);
+  res.end();
 });
 
-router.route("/api/saved").post(function (req, res) {
+router.route("/api/saved").post((req, res) => {
   console.log("made it to route");
   db.BookID.create();
 });
