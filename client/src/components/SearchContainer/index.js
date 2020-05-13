@@ -11,7 +11,7 @@ class SearchContainer extends React.Component {
   
   searchBooks = query => {
     API.apiCall(query)
-      .then(res => this.setState({results: res.data.items}))
+      .then(response =>this.setState({results: response.data }))
       .catch(err => console.log(err));
   };
 
@@ -44,13 +44,13 @@ class SearchContainer extends React.Component {
         <div className="container" id="resultsContainer">
           <h2>Results: </h2>
           {this.state.results ? this.state.results.map(result => { return <Results
-              bookName={result.volumeInfo.title}
-              bookAuthor={result.volumeInfo.authors[0]}
-              bookBio={result.volumeInfo.description}
-              viewBtn={result.volumeInfo.canonicalVolumeLink}
-              saveBtn={result.id}
+              bookName={result.volumeInfo.title || "Not found"}
+              bookAuthor={result.volumeInfo.authors[0] || "Not found"}
+              bookBio={result.volumeInfo.description || "Not found"}
+              viewBtn={result.volumeInfo.canonicalVolumeLink || "Not found"}
+              saveBtn={result.id || "Not found"}
               key={result.id}
-              image={result.volumeInfo.imageLinks.thumbnail}
+              image={result.volumeInfo.imageLinks.thumbnail || "Not found"}
             />})
            : <h1>No results</h1>}
         </div>
