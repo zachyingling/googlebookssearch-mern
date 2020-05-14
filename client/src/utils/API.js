@@ -8,6 +8,8 @@ export default {
     return axios.post("/api/saved/" + id).then(response => {
       if (response.data === true) {
         alert("Saved");
+      } else {
+        alert("Error saving, either book already saved or database is down.");
       }
     });
   }
