@@ -5,6 +5,10 @@ export default {
     return axios.get("/search/" + title + "/" + process.env.REACT_APP_GOOGLE_KEY);
   },
   postRoute: (id) => {
-    return axios.post("/api/saved/" + id);
+    return axios.post("/api/saved/" + id).then(response => {
+      if (response.data === true) {
+        alert("Saved");
+      }
+    });
   }
 };

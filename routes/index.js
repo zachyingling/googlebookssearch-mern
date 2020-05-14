@@ -10,10 +10,9 @@ router.route("/search/:title/:key").get((req, res) => {
 });
 
 router.route("/api/saved/:id").post((req, res) => {
-  console.log("book id: " + req.params.id);
-  debugger;
-  res.end();
-  // db.BookID.create();
+  db.BookID.create({ book_id: req.params.id }).then(() => { 
+    res.send(true);
+  });
 });
 
 module.exports = router;
