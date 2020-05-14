@@ -1,5 +1,6 @@
 #mainContainer {
   background-color: rgba(0, 0, 255, 0.63);
+  padding-bottom: 15px;
 }
 
 .text {
@@ -17,4 +18,5 @@
 
 #resultsContainer {
   background-color: aqua;
+  padding-bottom: 1px;
 }

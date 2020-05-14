@@ -44,13 +44,13 @@ class SearchContainer extends React.Component {
         <div className="container" id="resultsContainer">
           <h2>Results: </h2>
           {this.state.results ? this.state.results.map(result => { return <Results
-              bookName={result.volumeInfo.title || "Not found"}
-              bookAuthor={result.volumeInfo.authors[0] || "Not found"}
-              bookBio={result.volumeInfo.description || "Not found"}
-              viewBtn={result.volumeInfo.canonicalVolumeLink || "Not found"}
-              saveBtn={result.id || "Not found"}
+              bookName={result.volumeInfo.title ? result.volumeInfo.title : "Name Not found"}
+              bookAuthor={result.volumeInfo.authors ? result.volumeInfo.authors.toString : "Author Not found"}
+              bookBio={result.volumeInfo.description ? result.volumeInfo.description : "Bio Not found"}
+              viewBtn={result.volumeInfo.canonicalVolumeLink ? result.volumeInfo.canonicalVolumeLink : "/"}
+              saveBtn={result.id ? result.id : "No id"}
               key={result.id}
-              image={result.volumeInfo.imageLinks.thumbnail || "Not found"}
+              image={result.volumeInfo.imageLinks.thumbnail ? result.volumeInfo.imageLinks.thumbnail : ""}
             />})
            : <h1>No results</h1>}
         </div>
