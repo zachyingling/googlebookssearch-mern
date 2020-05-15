@@ -15,7 +15,7 @@ app.use(express.static("public"));
 
 
 // Connect to the Mongo DB
-mongoose.connect("mongodb://zachyingling:upenn!2112@ds127646.mlab.com:27646/heroku_753r90kd"|| "mongodb://localhost/booksdb", { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/booksdb");
 
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
