@@ -5,7 +5,6 @@ const PORT = process.env.PORT || 3001;
 const path = require("path");
 const app = express();
 const routes = require("./routes/index");
-const cors = require("cors");
 
 app.use(logger("dev"));
 app.use(express.urlencoded({ extended: true }));
