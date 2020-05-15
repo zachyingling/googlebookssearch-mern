@@ -2,8 +2,8 @@ const router = require("express").Router();
 const db = require("../models");
 const axios = require("axios");
 
-router.route("/search/:title/:key").get((req, res) => {
-  axios.get("https://www.googleapis.com/books/v1/volumes?q=intitle:" + req.params.title + "&key=" + req.params.key).then(response => {
+router.route("/search/:title").get((req, res) => {
+  axios.get("https://www.googleapis.com/books/v1/volumes?q=intitle:" + req.params.title + "&key=" + (process.env.GOOGLE_KEY || process.env.REACT_APP_GOOGLE_KEY)).then(response => {
     res.json(response.data.items);
   });
 });
