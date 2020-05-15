@@ -3,7 +3,6 @@ const db = require("../models");
 const axios = require("axios");
 
 router.route("/search/:title/:key").get((req, res) => {
-  console.log("search route");
   axios.get("https://www.googleapis.com/books/v1/volumes?q=intitle:" + req.params.title + "&key=" + req.params.key).then(response => {
     res.json(response.data.items);
   });
