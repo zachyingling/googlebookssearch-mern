@@ -9,7 +9,6 @@ const routes = require("./routes/index");
 app.use(logger("dev"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(routes);
 app.use(express.static("public"));
 
 
@@ -23,6 +22,8 @@ if (process.env.NODE_ENV === "production") {
     res.sendFile(path.resolve(__dirname, "/client", "/build", "/index.html"));
   });
 }
+
+app.use(routes);
 
 app.listen(PORT, () => {
   console.log("App running on port " + PORT + "!");

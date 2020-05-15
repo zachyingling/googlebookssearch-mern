@@ -12,7 +12,7 @@ class SearchContainer extends React.Component {
   searchBooks = query => {
     API.apiCall(query)
       .then(response =>this.setState({results: response.data }))
-      .catch(err => console.log(err));
+      .catch(err =>console.log(err));
   };
 
   handleInputChange = event => {
