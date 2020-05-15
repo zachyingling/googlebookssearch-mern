@@ -1,5 +1,5 @@
 {
-  "name": "GoogleBooksSearch-MERN",
+  "name": "googlebookssearch-mern",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
@@ -12,15 +12,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/zachyingling/GoogleBooksSearch-MERN.git"
+    "url": "git+https://github.com/zachyingling/googlebookssearch-mern.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/zachyingling/GoogleBooksSearch-MERN/issues"
+    "url": "https://github.com/zachyingling/googlebookssearch-mern/issues"
   },
-  "homepage": "https://github.com/zachyingling/GoogleBooksSearch-MERN#readme",
+  "homepage": "https://github.com/zachyingling/googlebookssearch-mern#readme",
   "dependencies": {
     "axios": "^0.19.2",
     "cors": "^2.8.5",
