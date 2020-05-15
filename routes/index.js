@@ -3,6 +3,8 @@ const db = require("../models");
 const axios = require("axios");
 
 router.route("/search/:title").get((req, res) => {
+  console.log("heroku key" + process.env.GOOGLE_KEY);
+  console.log("REACT key" + process.env.REACT_APP_GOOGLE_KEY);
   axios.get("https://www.googleapis.com/books/v1/volumes?q=intitle:" + req.params.title + "&key=" + (process.env.GOOGLE_KEY || process.env.REACT_APP_GOOGLE_KEY)).then(response => {
     res.json(response.data.items);
   });
