@@ -1,9 +1,18 @@
 import React from "react";
+import API from "../../utils/API";
 
 class SavedContainer extends React.Component {
-  state = {};
+  state = {
+    saved: null,
+  };
 
-  render () {
+  componentDidMount() {
+    API.grabSaved()
+      .then((response) => console.log(response))
+      .catch((err) => console.log(err));
+  }
+
+  render() {
     return (
       <div className="container">
         <h4>Saved Books:</h4>

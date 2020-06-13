@@ -12,5 +12,8 @@ export default {
         alert("Error saving, either book already saved or database is down.");
       }
     });
+  },
+  grabSaved: () => {
+    return axios.get("/api/saved");
   }
 };

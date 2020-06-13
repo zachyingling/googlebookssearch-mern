@@ -4,8 +4,6 @@ const db = require("../models");
 const axios = require("axios");
 
 router.route("/search/:title").get((req, res) => {
-  console.log("heroku key" + process.env.GOOGLE_KEY);
-  console.log("REACT key" + process.env.REACT_APP_GOOGLE_KEY);
   axios
     .get(
       "https://www.googleapis.com/books/v1/volumes?q=intitle:" +
@@ -38,6 +36,40 @@ router.route("/api/saved/:id").post((req, res) => {
       }
     })
     .catch((err) => res.send(false));
+});
+
+router.route("/api/saved").get((req, res) => {
+  let tempBookArr = [];
+  db.BookID.find()
+    .then((response) => {
+      for (let i = 0; i < response.length; i++) {
+        axios
+          .get(
+            "https://www.googleapis.com/books/v1/volumes/" +
+              response[i].book_id +
+              "?key=" +
+              (process.env.GOOGLE_KEY ||
+                process.env.REACT_APP_GOOGLE_KEY ||
+                process.env.DEV_GOOGLE_KEY)
+          )
+          .then((responseBook) => {
+            let tempBookObj = {};
+            tempBookObj.title = responseBook.data.volumeInfo.title;
+            tempBookObj.description = responseBook.data.volumeInfo.description;
+            tempBookObj.id = responseBook.data.id;
+            tempBookObj.authors = responseBook.data.volumeInfo.authors;
+            tempBookObj.image =
+              responseBook.data.volumeInfo.imageLinks.thumbnail;
+            tempBookObj.view = responseBook.data.volumeInfo.canonicalVolumeLink;
+            tempBookArr.push(tempBookObj);
+            if (i === response.length - 1) {
+              res.send(tempBookArr);
+            }
+          })
+          .catch((err) => console.log(err));
+      }
+    })
+    .catch((err) => res.send(err));
 });
 
 module.exports = router;
