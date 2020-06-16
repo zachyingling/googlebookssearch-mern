@@ -1,11 +1,11 @@
 import axios from "axios";
 
-export default { 
+export default {
   apiCall: (title) => {
     return axios.get("/search/" + title);
   },
   postRoute: (id) => {
-    return axios.post("/api/saved/" + id).then(response => {
+    return axios.post("/api/saved/" + id).then((response) => {
       if (response.data === true) {
         alert("Saved");
       } else {
@@ -15,5 +15,8 @@ export default {
   },
   grabSaved: () => {
     return axios.get("/api/saved");
-  }
+  },
+  unsaveBook: (id) => {
+    return axios.post("/api/unsaved/" + id);
+  },
 };

@@ -56,6 +56,11 @@ router.route("/api/saved").get((req, res) => {
             let tempBookObj = {};
             tempBookObj.title = responseBook.data.volumeInfo.title;
             tempBookObj.description = responseBook.data.volumeInfo.description;
+            // This gets rid of <>'s and all text inbetween them
+            tempBookObj.description = tempBookObj.description.replace(
+              / *\<[^]*\> */g,
+              ""
+            );
             tempBookObj.id = responseBook.data.id;
             tempBookObj.authors = responseBook.data.volumeInfo.authors;
             tempBookObj.image =
@@ -70,6 +75,16 @@ router.route("/api/saved").get((req, res) => {
       }
     })
     .catch((err) => res.send(err));
+});
+
+router.route("/api/unsaved/:id").post((req, res) => {
+  let tempBookID = req.params.id;
+
+  db.BookID.deleteOne({ id: tempBookID })
+    .then(() => {
+      res.send("unsaved");
+    })
+    .catch((err) => res.send("error"));
 });
 
 module.exports = router;
