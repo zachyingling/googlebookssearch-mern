@@ -69,7 +69,7 @@ router.route("/api/saved").get((req, res) => {
               responseBook.data.volumeInfo.imageLinks.thumbnail;
             tempBookObj.view = responseBook.data.volumeInfo.canonicalVolumeLink;
             tempBookArr.push(tempBookObj);
-            if (i === response.length - 1) {
+            if (tempBookArr.length === response.length) {
               res.send(tempBookArr);
             }
           })

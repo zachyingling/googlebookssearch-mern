@@ -9,7 +9,9 @@ class SavedContainer extends React.Component {
 
   componentDidMount() {
     API.grabSaved()
-      .then((response) => this.setState({ saved: response.data }))
+      .then((response) => {
+        this.setState({ saved: response.data });
+      })
       .catch((err) => console.log(err));
   }
 
