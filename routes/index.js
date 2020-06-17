@@ -57,10 +57,12 @@ router.route("/api/saved").get((req, res) => {
             tempBookObj.title = responseBook.data.volumeInfo.title;
             tempBookObj.description = responseBook.data.volumeInfo.description;
             // This gets rid of <>'s and all text inbetween them
-            tempBookObj.description = tempBookObj.description.replace(
-              / *\<[^]*\> */g,
-              ""
-            );
+            if (tempBookObj.description) {
+              tempBookObj.description = tempBookObj.description.replace(
+                / *\<[^]*\> */g,
+                ""
+              );
+            }
             tempBookObj.id = responseBook.data.id;
             tempBookObj.authors = responseBook.data.volumeInfo.authors;
             tempBookObj.image =
