@@ -3,7 +3,9 @@ import SavedContainer from "../components/SavedContainer/index";
 
 function Saved () {
   return (
-    <SavedContainer/>
+    <div className="wrapper">
+      <SavedContainer/>
+    </div>
   );
   
 }

@@ -1,6 +1,7 @@
 #backgroundJumbo {
   background-image: url("book-img.jpg");
-  width: 100%;
+  background-position: center;
+  background-size: cover;
 }
 
 #headerText, #descriptionText {
