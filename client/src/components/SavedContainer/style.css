@@ -1,0 +1,13 @@
+#savedContainer {
+  padding-top: 20px;
+  background-color: #1f4a1d;
+  padding-bottom: 1px;
+}
+
+#savedBookText {
+  font-size: 3rem;
+  color: white;
+  font-family: 'Gentium Book Basic', serif;
+  text-align: center;
+  padding-top: 10px;
+}

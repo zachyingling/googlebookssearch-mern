@@ -1,10 +1,11 @@
 #mainContainer {
-  background-color: rgba(0, 0, 255, 0.63);
+  background-color: #633c06;
   padding-bottom: 15px;
 }
 
 .text {
   color: white;
+  font-family: 'Gentium Book Basic', serif;
 }
 
 #bookName {
@@ -17,6 +18,19 @@
 }
 
 #resultsContainer {
-  background-color: aqua;
+  background-color: #1f4a1d;
   padding-bottom: 1px;
+}
+
+#enterBook {
+  font-size: 1.5rem;
+}
+
+#searchBookText {
+  font-size: 3rem;
+}
+
+#resultsText {
+  font-size: 2.3rem;
+  padding-top: 8px;
 }

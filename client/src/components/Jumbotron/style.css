@@ -1,0 +1,10 @@
+#backgroundJumbo {
+  background-image: url("book-img.jpg");
+  width: 100%;
+}
+
+#headerText, #descriptionText {
+  font-weight: bold;
+  font-family: 'Gentium Book Basic', serif;
+  color: black;
+}

@@ -34,15 +34,15 @@ class SearchContainer extends React.Component {
     return (
       <div className="container" id="mainContainer">
         <div className="container">
-          <h1 className="text">Search Book</h1>
+          <h1 className="text" id="searchBookText">Search Book</h1>
           <form className="container">
-            <label htmlFor="bookName" className="text">Enter book name: </label>
+            <label htmlFor="bookName" className="text" id="enterBook">Enter book name: </label>
             <input type="text" id="bookName" name="title" value={this.state.title} onChange={this.handleInputChange}/>
             <input type="submit" id="searchBook" value="Search" onClick={this.handleFormSubmit} />
           </form>
         </div>
         <div className="container" id="resultsContainer">
-          <h2>Results: </h2>
+          <h2 className="text" id="resultsText">Results: </h2>
           {this.state.results ? this.state.results.map(result => { return <Results
               bookName={result.volumeInfo.title ? result.volumeInfo.title : "Name Not found"}
               bookAuthor={result.volumeInfo.authors ? result.volumeInfo.authors.toString : "Author Not found"}
