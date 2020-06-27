@@ -5,3 +5,7 @@ footer {
   bottom: 0;
   text-align: center;
 }
+
+#footerTitle {
+  color: white;
+}

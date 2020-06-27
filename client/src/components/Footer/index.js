@@ -4,8 +4,8 @@ import "./style.css";
 function Footer(){
   return (
     <footer>
-      <h1>Google Book Search using MERN stack.</h1>
-      <a href="https://github.com/zachyingling/googlebookssearch-mern">Repo</a>
+      <h1 id="footerTitle">Google Book Search using MERN stack.</h1>
+      <h3><a href="https://github.com/zachyingling/googlebookssearch-mern">Repo</a></h3>
     </footer>
   );
 }
