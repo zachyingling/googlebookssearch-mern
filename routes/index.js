@@ -97,13 +97,4 @@ router.route("/api/unsaved/:id").post((req, res) => {
     .catch((err) => res.send("error"));
 });
 
-// Test route for heroku
-router.route('/*').get((req, res) => {
-  res.sendFile(path.join(__dirname, '../client/public/index.html'), function(err) {
-    if (err) {
-      res.status(500).send(err)
-    }
-  });
-});
-
 module.exports = router;
