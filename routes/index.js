@@ -62,6 +62,13 @@ router.route("/api/saved").get((req, res) => {
                 / *\<[^]*\> */g,
                 ""
               );
+            } else {
+              tempBookObj.description = "No description found for book.";
+            }
+
+            // Some descriptions were inbetween <> from start to finish leaving description to be an empty string so i check for this again
+            if(!tempBookObj.description){
+              tempBookObj.description = "No description found for book.";
             }
             tempBookObj.id = responseBook.data.id;
             tempBookObj.authors = responseBook.data.volumeInfo.authors;
