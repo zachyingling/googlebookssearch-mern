@@ -13,7 +13,7 @@ class App extends React.Component {
           <Nav path={window.location.pathname}/>
           <Jumbotron/>
           <Route exact path="/" component={Search} />
-          <Route exact path="/saved" component={Saved} />
+          <Route path="/saved" component={Saved} />
         </div>
       </Router>
     );
