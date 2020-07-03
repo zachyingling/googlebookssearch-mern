@@ -1,5 +1,6 @@
 import React from "react";
-import { BrowserRouter as HashRouter, Route, Switch} from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch,} from "react-router-dom";
+import { HashRouter } from "react-router-dom";
 import Nav from "./components/Nav/index";
 import Saved from "./pages/Saved";
 import Search from "./pages/Search";
